@@ -17,13 +17,16 @@ tasks:
 
     source ${HOME}/.bashrc
 
-    mamba create -n minigraph -c bioconda minigraph -c conda-forge qt -y
+    mamba create -n minigraph -c bioconda -c conda-forge minigraph qt -y
     mamba activate minigraph
+    git clone https://github.com/lh3/minigraph.git
 
     wget https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip
     unzip Bandage_Ubuntu_dynamic_v0_8_1.zip
 
     wget https://raw.githubusercontent.com/cistarsa/BGA-23_MTomics/main/MTranscripts.mfa
+    wget ftp://ftp.ed.ac.uk/incoming/D02_files.tgz
+    tar xzf D02_files.tgz
 
     export LD_LIBRARY_PATH=/workspace/conda/envs/minigraph/lib/:$LD_LIBRARY_PATH
     clear
