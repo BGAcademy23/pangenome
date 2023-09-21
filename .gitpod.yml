@@ -1,5 +1,12 @@
 image: gitpod/workspace-full-vnc
 
+ports:
+  - port: 5900
+    onOpen: ignore
+  - port: 6080
+    onOpen: open-browser
+    visibility: public
+
 tasks:
 - name: install mamba
   command: |
@@ -10,7 +17,7 @@ tasks:
 
     source ${HOME}/.bashrc
 
-    mamba create -n minigraph -c bioconda minigraph -y
+    mamba create -n minigraph -c bioconda minigraph -c conda-forge qt -y
     mamba activate minigraph
 
     wget https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip
@@ -18,6 +25,7 @@ tasks:
 
     wget https://raw.githubusercontent.com/cistarsa/BGA-23_MTomics/main/MTranscripts.mfa
 
+    export LD_LIBRARY_PATH=/workspace/conda/envs/minigraph/lib/:$LD_LIBRARY_PATH
     clear
     
 vscode:
