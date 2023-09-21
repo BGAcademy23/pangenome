@@ -1,13 +1,20 @@
-image: gitpod/workspace-base
+image: gitpod/workspace-full-vnc
 
 tasks:
 - name: install mamba
   command: |
+    cd /workspace
     curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
     bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/conda && rm Mambaforge-$(uname)-$(uname -m).sh
     /workspace/conda/bin/mamba init bash
 
     source ${HOME}/.bashrc
+
+    mamba create -n minigraph -c bioconda minigraph -y
+    mamba activate minigraph
+
+    wget https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip
+    unzip Bandage_Ubuntu_dynamic_v0_8_1.zip
 
 vscode:
   extensions:
