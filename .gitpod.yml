@@ -17,7 +17,7 @@ tasks:
 
     source ${HOME}/.bashrc
 
-    mamba create -n minigraph -c bioconda -c conda-forge minigraph qt -y
+    mamba create -n minigraph -c bioconda -c conda-forge blast minigraph qt -y
     mamba activate minigraph
     git clone https://github.com/lh3/minigraph.git
 
