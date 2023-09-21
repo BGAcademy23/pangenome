@@ -16,6 +16,10 @@ tasks:
     wget https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip
     unzip Bandage_Ubuntu_dynamic_v0_8_1.zip
 
+    wget https://raw.githubusercontent.com/cistarsa/BGA-23_MTomics/main/MTranscripts.mfa
+
+    clear
+    
 vscode:
   extensions:
     - anwar.papyrus-pdf
