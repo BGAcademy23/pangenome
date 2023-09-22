@@ -23,10 +23,7 @@ tasks:
     unzip Bandage_Ubuntu_dynamic_v0_8_1.zip
 
     wget https://raw.githubusercontent.com/cistarsa/BGA-23_MTomics/main/MTranscripts.mfa
-    wget https://sk13.cog.sanger.ac.uk/D02_files.tgz
-    tar xzf D02_files.tgz
-    wget https://sk13.cog.sanger.ac.uk/D11_files.tgz
-    tar xzf D11_files.tgz
+   
 
   command: |
     /workspace/conda/bin/mamba init bash
